@@ -15,14 +15,16 @@
 <body class="bg-warning">
 
     <h1 class="text-center py-2 bg-success text-white">TIC-TAC-TOE GAME</h1>
+    <h3 class=" text-center text-success">Enter Your Name</h3>
    <div id="topbox" class="text-center mt-3">
-        <label for="" class="fs-3 fw-bold text-success">Enter Your Name</label>
-        <input type="text" id="pname1" placeholder="Type your name" class="p-2">
-        <input type="text" id="pname2" placeholder="Type your name" class="p-2">
-        <button onclick="join()" class=" btn btn-success rounded-0 fw-bold">Join Players</button>
-        <button onclick="startGame()" class=" btn btn-success rounded-0 fw-bold ">Start Game</button>
-        <button onclick="contGame()" class=" btn btn-success rounded-0 fw-bold ">Continue Playing</button>  
-        <button onclick="restartGame()" class=" btn btn-success rounded-0 fw-bold ">Restart Game</button>     
+        <input type="text" id="pname1" placeholder="Player 1" class="p-2">
+        <input type="text" id="pname2" placeholder="Player 2" class="p-2">
+    </div>
+    <div class="text-center mt-3">
+       <button onclick="join()" class=" btn btn-success rounded-0 fw-bold">Join Players</button>
+       <button onclick="startGame()" class=" btn btn-success rounded-0 fw-bold ">Start Game</button>
+       <button onclick="contGame()" class=" btn btn-success rounded-0 fw-bold ">Continue Playing</button>  
+       <button onclick="restartGame()" class=" btn btn-success rounded-0 fw-bold ">Restart Game</button>     
    </div>
 
 
@@ -59,7 +61,16 @@
                     <th class="p-2 fs-4"> Score</th>
                 </tr>
             </thead>
-            <tbody id="res"></tbody>
+            <tbody id="res">
+                <tr>
+                    <td id="p1"> </td>
+                    <td id="myScore1"></td>
+                </tr>
+                <tr>
+                    <td id="p2"></td>
+                    <td id="myScore2"></td>
+                </tr>
+            </tbody>
            
         </table>
    </div>

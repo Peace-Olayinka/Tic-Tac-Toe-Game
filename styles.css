@@ -1,3 +1,9 @@
+/* #topbox{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap:5px;
+} */
 
 #tictable{
     background-color: darkgreen;
@@ -56,12 +62,6 @@ td{
         padding: 0.2em !important;
         justify-content: space-between !important;
     }
-}
-#topbox{
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    gap:5px;
 }
 #winAlert{
     text-transform: uppercase;

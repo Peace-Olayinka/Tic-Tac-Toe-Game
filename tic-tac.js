@@ -1,26 +1,24 @@
-let pscore1 
-let pscore2 
 let player1 = pname1.value
 let player2 = pname2.value
+let scoreCount = 0
+
 const join=()=>{
-    playerTab.style.visibility = 'visible'
     player1 = pname1.value
     player2 = pname2.value
-    pscore1 = 0
-    pscore2 = 0
-    pname1.value=''
-    pname2.value=''
-    res.innerHTML =
-    `
-        <tr>
-            <td>${player1}</td>
-            <td>${pscore1}</td>
-        </tr>
-        <tr>
-            <td>${player2}</td>
-            <td>${pscore2}</td>
-        </tr>
-     `      
+    scoreCount = 0
+    if (pname1.value=='' || pname2.value=='') {
+        alert('Player name can not be empty! Enter player name to join game')
+    }
+    else{
+        playerTab.style.visibility = 'visible'
+        p1.innerText = player1 
+        myScore1.innerText = scoreCount
+        p2.innerText = player2
+        myScore2.innerText= scoreCount
+        pname1.value=''
+        pname2.value=''
+
+    }     
 }
  
 const startGame =()=>{
@@ -37,9 +35,9 @@ let btn7 = document.getElementById('mybtn7')
 let btn8 = document.getElementById('mybtn8')
 let btn9 = document.getElementById('mybtn9')
 let playbox = 'X'
-let initialscore = 0
 
 const myFunc=(e)=>{
+    scoreCount = 0
     if (playbox=='X' &&  e.target.innerText=='') {
         e.target.innerText = playbox
         playbox = "O"
@@ -47,10 +45,10 @@ const myFunc=(e)=>{
         if (btn1.innerText=='X' && btn2.innerText== 'X' && btn3.innerText=='X' || btn4.innerText=='X'&& btn5.innerText=='X' && btn6.innerText=='X' || btn7.innerText=='X' && btn8.innerText=='X'&& btn9.innerText=='X' || btn1.innerText=='X' && btn4.innerText=='X' && btn7.innerText=='X' || btn2.innerText=='X' && btn5.innerText=='X' && btn8.innerText=='X' || btn3.innerText=='X' && btn6.innerText=='X' && btn9.innerText=='X' ||btn1.innerText=='X' && btn5.innerText=='X' && btn9.innerText=='X' || btn3.innerText=='X' && btn5.innerText=='X' && btn7.innerText=='X' ) {
             
             winAlert.innerText =`${player1} WON!`
-            e.target.disabled = true
-
-            if (winAlert.innerText ===`${player1} WON!`) {  
-                pscore1 = initialscore + 1 
+            
+            if (winAlert.innerText ===`${player1} WON!`) { 
+                scoreCount +=1
+                myScore1.innerText = `${scoreCount}`
             }
   
         }
@@ -65,11 +63,11 @@ const myFunc=(e)=>{
         if (btn1.innerText=='O' && btn2.innerText== 'O' && btn3.innerText=='O' || btn4.innerText=='O'&& btn5.innerText=='O' && btn6.innerText=='O' || btn7.innerText=='O' && btn8.innerText=='O'&& btn9.innerText=='O' || btn1.innerText=='O' && btn4.innerText=='O' && btn7.innerText=='O' || btn2.innerText=='O' && btn5.innerText=='O' && btn8.innerText=='O' || btn3.innerText=='O' && btn6.innerText=='O' && btn9.innerText=='O' ||btn1.innerText=='O' && btn5.innerText=='O' && btn9.innerText=='O' || btn3.innerText=='O' && btn5.innerText=='O' && btn7.innerText=='O' ) {
             
             winAlert.innerText=`${player2} WON!`
-            e.target.disabled = true
+            // e.target.disabled = true
 
-            if (winAlert.innerText===`${player2} WON!`) {
-                pscore2 = initialscore + 1
-            }
+            // if (winAlert.innerText===`${player2} WON!`) {
+            //     pscore2 = initialscore + 1
+            // }
         }
     }
 }
@@ -85,9 +83,9 @@ const contGame=()=>{
     btn7.innerText='' 
     btn8.innerText=''
     btn9.innerText=''  
-    if (winAlert.innerText===`${player1} WON!` || winAlert.innerText===`${player2} WON!` || winAlert.innerText===` DRAW GAME! `) {
-        initialscore++  
-    }
+    // if (winAlert.innerText===`${player1} WON!` || winAlert.innerText===`${player2} WON!` || winAlert.innerText===` DRAW GAME! `) {
+    //     scoreCount++  
+    // }
 }
 
 const restartGame=()=>{
