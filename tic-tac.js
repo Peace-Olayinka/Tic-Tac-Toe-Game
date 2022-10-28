@@ -35,9 +35,9 @@ let btn7 = document.getElementById('mybtn7')
 let btn8 = document.getElementById('mybtn8')
 let btn9 = document.getElementById('mybtn9')
 let playbox = 'X'
+// scoreCount = 0
 
 const myFunc=(e)=>{
-    scoreCount = 0
     if (playbox=='X' &&  e.target.innerText=='') {
         e.target.innerText = playbox
         playbox = "O"
@@ -45,12 +45,12 @@ const myFunc=(e)=>{
         if (btn1.innerText=='X' && btn2.innerText== 'X' && btn3.innerText=='X' || btn4.innerText=='X'&& btn5.innerText=='X' && btn6.innerText=='X' || btn7.innerText=='X' && btn8.innerText=='X'&& btn9.innerText=='X' || btn1.innerText=='X' && btn4.innerText=='X' && btn7.innerText=='X' || btn2.innerText=='X' && btn5.innerText=='X' && btn8.innerText=='X' || btn3.innerText=='X' && btn6.innerText=='X' && btn9.innerText=='X' ||btn1.innerText=='X' && btn5.innerText=='X' && btn9.innerText=='X' || btn3.innerText=='X' && btn5.innerText=='X' && btn7.innerText=='X' ) {
             
             winAlert.innerText =`${player1} WON!`
-            
-            if (winAlert.innerText ===`${player1} WON!`) { 
-                scoreCount +=1
-                myScore1.innerText = `${scoreCount}`
-            }
-  
+            if (winAlert.innerText ===`${player1} WON!`) {
+                // scoreCount +=1
+                myScore1.innerText = scoreCount+1
+                // e.target.disabled = true
+            }  
+          
         }
         else if (btn1.innerText!='' && btn2.innerText!= '' && btn3.innerText!='' && btn4.innerText!=''&& btn5.innerText!='' && btn6.innerText!='' && btn7.innerText!='' && btn8.innerText!=''&& btn9.innerText!='' ){
             winAlert.innerText=` DRAW GAME! ` 
@@ -63,11 +63,12 @@ const myFunc=(e)=>{
         if (btn1.innerText=='O' && btn2.innerText== 'O' && btn3.innerText=='O' || btn4.innerText=='O'&& btn5.innerText=='O' && btn6.innerText=='O' || btn7.innerText=='O' && btn8.innerText=='O'&& btn9.innerText=='O' || btn1.innerText=='O' && btn4.innerText=='O' && btn7.innerText=='O' || btn2.innerText=='O' && btn5.innerText=='O' && btn8.innerText=='O' || btn3.innerText=='O' && btn6.innerText=='O' && btn9.innerText=='O' ||btn1.innerText=='O' && btn5.innerText=='O' && btn9.innerText=='O' || btn3.innerText=='O' && btn5.innerText=='O' && btn7.innerText=='O' ) {
             
             winAlert.innerText=`${player2} WON!`
-            // e.target.disabled = true
-
-            // if (winAlert.innerText===`${player2} WON!`) {
-            //     pscore2 = initialscore + 1
-            // }
+            if(winAlert.innerText ===`${player2} WON!`){
+                // scoreCount +=1
+                myScore2.innerText = scoreCount+1
+                // e.target.disabled = true
+            }
+          
         }
     }
 }
@@ -83,9 +84,10 @@ const contGame=()=>{
     btn7.innerText='' 
     btn8.innerText=''
     btn9.innerText=''  
-    // if (winAlert.innerText===`${player1} WON!` || winAlert.innerText===`${player2} WON!` || winAlert.innerText===` DRAW GAME! `) {
-    //     scoreCount++  
-    // }
+    if (winAlert.innerText===`${player1} WON!` || winAlert.innerText===`${player2} WON!` || winAlert.innerText===` DRAW GAME! `) {
+        scoreCount++ 
+       
+    }
 }
 
 const restartGame=()=>{
