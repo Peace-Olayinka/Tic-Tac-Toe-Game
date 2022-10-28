@@ -32,6 +32,14 @@ td{
     width: 95px;
     min-height: 95px;
 }
+@media screen  and (max-width:1000px){
+    .mybtns{
+        font-size: 2rem;
+        font-weight: bolder;
+        width: 30px;
+        min-height: 30px;
+    }
+}
 
 #playerTab{
     background-color: white;
@@ -57,10 +65,12 @@ td{
 }
 @media screen  and (max-width:1000px){
     #mainbox{
-        width: 95%;
-        grid-template-columns: 40% 40% !important;
-        padding: 0.2em !important;
-        justify-content: space-between !important;
+        width: 95% !important;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1em;
+        gap:10px !important;
+       
     }
 }
 
