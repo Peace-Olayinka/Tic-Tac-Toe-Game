@@ -27,26 +27,29 @@
        <button onclick="restartGame()" class=" btn btn-success rounded-0 fw-bold ">Restart Game</button>     
    </div>
 
+   <div id="winAlert" class="bg-white text-success text-center w-25 h-50 p-5 m-auto mt-3 fs-5 fw-bold" style="display: none">game</div>
+
 
    <div id="mainbox" class="mt-4 py-3">
         <table id="tictable" class="mt-2" >
             <tbody>
                 <tr id="row1">
-                    <td><button id="mybtn1" onclick="myFunc(event)" class="mybtns"></button></td>
-                    <td id="lefty"><button id="mybtn2" onclick="myFunc(event)" class="mybtns"></button></td>
-                    <td id="lefty"><button id="mybtn3" onclick="myFunc(event)" class="mybtns"></button></td>
+                    <td><button id="mybtn1" onclick="myFunc(event)"   class="mybtns"></button></td>
+                    <td id="lefty"><button id="mybtn2" onclick="myFunc(event)"   class="mybtns"></button></td>
+                    <td id="lefty"><button id="mybtn3" onclick="myFunc(event)"  class="mybtns"></button></td>
                 </tr>
                 <tr id="row2">
-                    <td><button id="mybtn4" onclick="myFunc(event)" class="mybtns"></button></td>
-                    <td id="lefty"><button id="mybtn5" onclick="myFunc(event)" class="mybtns"></button></td>
-                    <td id="lefty"><button id="mybtn6" onclick="myFunc(event)" class="mybtns"></button></td>
+                    <td><button id="mybtn4" onclick="myFunc(event)"   class="mybtns"></button></td>
+                    <td id="lefty"><button id="mybtn5" onclick="myFunc(event)"  class="mybtns"></button></td>
+                    <td id="lefty"><button id="mybtn6" onclick="myFunc(event)"  class="mybtns"></button></td>
                 </tr>
                 <tr id="row3">
-                    <td><button id="mybtn7" onclick="myFunc(event)" class="mybtns"></button></td>
-                    <td id="lefty"><button id="mybtn8" onclick="myFunc(event)" class="mybtns"></button></td>
+                    <td><button id="mybtn7" onclick="myFunc(event)"   class="mybtns"></button></td>
+                    <td id="lefty"><button id="mybtn8" onclick="myFunc(event)"   class="mybtns"></button></td>
                     <td id="lefty"><button id="mybtn9" onclick="myFunc(event)" class="mybtns"></button></td>
                 </tr>
-    
+
+                
             </tbody>
         </table>
 
@@ -54,7 +57,7 @@
         <table id="playerTab" class="mt-2">
             <thead>
                <tr>
-                <td class="py-2 fs-3 fw-bold text-center" colspan="2" id="winAlert">Score Board</td>
+                <td class="py-2 fs-3 fw-bold text-center" colspan="2">Score Board</td>
                 <!-- <td></td> -->
                </tr>
                 <tr>
