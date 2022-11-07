@@ -6,8 +6,6 @@ let scoreCountB =0
 const join=()=>{
     player1 = pname1.value
     player2 = pname2.value
-    // scoreCount = 0
-    // scoreCountB = 0
     if (pname1.value=='' || pname2.value=='') {
         alert('Player name can not be empty! Enter player name to join game')
     }
