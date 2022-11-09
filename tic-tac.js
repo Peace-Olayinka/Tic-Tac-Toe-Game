@@ -36,6 +36,29 @@ let btn8 = document.getElementById('mybtn8')
 let btn9 = document.getElementById('mybtn9')
 let playbox = 'X'
 
+const disabledBtn =()=>{
+    btn1.disabled = true
+    btn2.disabled = true
+    btn3.disabled = true
+    btn4.disabled = true
+    btn5.disabled = true
+    btn6.disabled = true
+    btn7.disabled = true
+    btn8.disabled = true
+    btn9.disabled = true
+}
+
+const activateBtn =()=>{
+    btn1.disabled = false
+    btn2.disabled = false
+    btn3.disabled = false
+    btn4.disabled = false
+    btn5.disabled = false
+    btn6.disabled = false
+    btn7.disabled = false
+    btn8.disabled = false
+    btn9.disabled = false
+}
 
 const myFunc=(e)=>{
    
@@ -50,14 +73,14 @@ const myFunc=(e)=>{
             if (winAlert.innerText ===`${player1} WON!`) {
                 scoreCount+=1
                 myScore1.innerText = scoreCount
-                e.target.disabled = true
+                disabledBtn()
             }  
 
         }
         else if (btn1.innerText!='' && btn2.innerText!= '' && btn3.innerText!='' && btn4.innerText!=''&& btn5.innerText!='' && btn6.innerText!='' && btn7.innerText!='' && btn8.innerText!=''&& btn9.innerText!='' ){
             winAlert.style.display = "block"   
             winAlert.innerText=` DRAW GAME! ` 
-            e.target.disabled = true
+            disabledBtn()
         }
     }
     else if(playbox=='O' &&  e.target.innerText==''){
@@ -71,12 +94,13 @@ const myFunc=(e)=>{
             if(winAlert.innerText ===`${player2} WON!`){
                 scoreCountB+=1
                 myScore2.innerText = scoreCountB
-                e.target.disabled = true
+                disabledBtn()
             }
         }
     }
 }
 const contGame=()=>{
+    activateBtn()
     winAlert.style.display = "none"
     // winAlert.innerText=` SCORE BOARD `
     btn1.innerText='' 
